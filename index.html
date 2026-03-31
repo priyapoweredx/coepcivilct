@@ -230,6 +230,51 @@ details[open]>summary{background:var(--surface2);border-bottom:1px solid var(--b
 .delay-1{animation-delay:0.1s}.delay-2{animation-delay:0.2s}.delay-3{animation-delay:0.3s}
 
 .section-label{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--gold);margin:1.75rem 0 0.85rem;padding-bottom:6px;border-bottom:1px solid var(--border)}
+
+/* ─── STEP CARDS (IS 10262) ─── */
+.step-flow{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;border-radius:12px;overflow:hidden;background:var(--border);margin-bottom:1.5rem}
+.step-card{background:var(--surface);padding:1.5rem;transition:background 0.15s;position:relative}
+.step-card:hover{background:var(--surface2)}
+.step-num{font-family:var(--font-mono);font-size:10px;color:var(--gold);background:var(--gold-dim);border:1px solid var(--gold-border);padding:3px 9px;border-radius:3px;display:inline-block;margin-bottom:10px;letter-spacing:0.08em}
+.step-title{font-family:var(--font-head);font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px}
+.step-body{font-size:13px;color:var(--muted2);line-height:1.65}
+.step-body .hl{color:var(--gold);font-weight:500}
+.step-body ul{padding-left:1.1rem;margin-top:5px}
+.step-body li{margin-bottom:2px}
+
+/* ─── COMPARISON ROW ─── */
+.compare-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-bottom:1rem}
+.compare-card{background:var(--surface2);border:1px solid var(--border2);border-radius:8px;padding:1rem;font-size:13px}
+.compare-card .cc-title{font-family:var(--font-head);font-size:12px;font-weight:700;margin-bottom:5px;color:var(--text)}
+.compare-card .cc-sub{color:var(--muted2);line-height:1.6;font-size:12.5px}
+
+/* ─── PROCEDURE STEPS ─── */
+.proc-steps{counter-reset:proc;padding:0;list-style:none;margin:0.75rem 0}
+.proc-steps li{counter-increment:proc;padding:0.7rem 0.75rem 0.7rem 2.8rem;position:relative;font-size:13.5px;color:var(--muted2);line-height:1.65;border-left:2px solid var(--border2);margin-left:1rem;margin-bottom:2px}
+.proc-steps li::before{content:counter(proc);position:absolute;left:-1.1rem;top:0.6rem;width:1.6rem;height:1.6rem;background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:10px;color:var(--gold);font-weight:600;line-height:1.6rem;text-align:center}
+.proc-steps li strong{color:var(--text);font-weight:500}
+
+/* ─── AGGREGATE TABLE ─── */
+.agg-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;border-radius:10px;overflow:hidden;background:var(--border2);margin:0.75rem 0 1.5rem}
+.agg-col{background:var(--surface);padding:1.25rem}
+.agg-col-head{font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;padding-bottom:6px;border-bottom:1px solid var(--border2)}
+.agg-col ul{list-style:disc;padding-left:1.1rem;font-size:13px;color:var(--muted2);line-height:1.8}
+@media(max-width:500px){.agg-grid{grid-template-columns:1fr}}
+
+/* ─── ADVANTAGES LIST ─── */
+.adv-list{list-style:none;padding:0;margin:0.75rem 0}
+.adv-list li{padding:6px 0 6px 1.6rem;position:relative;font-size:13.5px;color:var(--muted2);line-height:1.6;border-bottom:1px solid var(--border)}
+.adv-list li:last-child{border-bottom:none}
+.adv-list li::before{content:'✓';position:absolute;left:0;color:var(--teal);font-weight:700}
+.adv-list.limit li::before{content:'✕';color:var(--red)}
+.adv-list li strong{color:var(--text);font-weight:500}
+
+/* ─── APPLICATIONS GRID ─── */
+.app-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin:0.75rem 0 1.5rem}
+.app-item{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:0.9rem 1rem;font-size:13px}
+.app-item .app-cat{font-family:var(--font-head);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.app-item .app-desc{color:var(--muted2);line-height:1.55}
+.app-item .app-desc strong{color:var(--text);font-weight:500}
 </style>
 </head>
 <body>
@@ -251,10 +296,10 @@ details[open]>summary{background:var(--surface2);border-bottom:1px solid var(--b
 <div class="hero">
   <div class="hero-badge fade-in"><div class="hero-badge-dot"></div><span>Exam tomorrow · 45% of grade</span></div>
   <h1 class="fade-in delay-1">Concrete<br><em>Technology</em><br><span class="outline">Master Guide</span></h1>
-  <p class="hero-desc fade-in delay-2">Every formula, limit, apparatus & IS code — all 6 units, zero PPTs required. AI-powered MCQ practice included.</p>
+  <p class="hero-desc fade-in delay-2">Every formula, limit, apparatus & IS code — all 6 units, enriched with full lecture PPT content. Step-by-step procedures, application tables, and AI-powered MCQ practice.</p>
   <div class="hero-meta fade-in delay-3">
     <div class="meta-item"><div class="num">6</div><div class="lbl">Units covered</div></div>
-    <div class="meta-item"><div class="num">50+</div><div class="lbl">Key numbers</div></div>
+    <div class="meta-item"><div class="num">80+</div><div class="lbl">Key numbers</div></div>
     <div class="meta-item"><div class="num">∞</div><div class="lbl">AI MCQs</div></div>
     <div class="meta-item"><div class="num">IS</div><div class="lbl">Codes included</div></div>
   </div>
@@ -530,7 +575,33 @@ details[open]>summary{background:var(--surface2);border-bottom:1px solid var(--b
 </div>
 
 <div class="section-label">💪 Compressive Strength</div>
-<div class="box box-gold" style="margin-bottom:1rem"><strong>Test method:</strong> Crush <strong>150 mm × 150 mm × 150 mm cubes</strong> · Loading rate = <strong>140 kg/cm²/min</strong> · IS 516-1959</div>
+<div class="box box-gold" style="margin-bottom:1rem"><strong>Test method:</strong> Crush <strong>150 mm × 150 mm × 150 mm cubes</strong> · Loading rate = <strong>140 kg/cm²/min</strong> · IS 516-1959 · Result = fck in N/mm²</div>
+
+<details style="margin-bottom:1rem"><summary>IS 516-1959 — Full Test Procedure (Exam Favourite)</summary>
+<div class="acc-body">
+  <div class="sub-label">Apparatus</div>
+  <strong>Compression Testing Machine (CTM), 150mm cube moulds, tamping rod, trowel, weighing balance, vibrator, curing tank.</strong>
+  <ol class="proc-steps">
+    <li><strong>Prepare moulds:</strong> 150 mm cube moulds are cleaned, assembled and oiled before mixing.</li>
+    <li><strong>Weigh dry ingredients</strong> as per mix proportions. Determine water quantity from given W/C ratio (nominal mix: W/C = 0.4–0.6).</li>
+    <li><strong>Mix:</strong> Dry ingredients mixed first, then water added. Mix thoroughly.</li>
+    <li><strong>Fill moulds:</strong> Pour concrete in 3 equal layers, tamp each layer <span class="hl">25 times</span> with 16 mm tamping rod (or compact with vibrator).</li>
+    <li><strong>Level top surface</strong> with trowel; mark specimen ID on each cube.</li>
+    <li><strong>Initial curing:</strong> Keep filled moulds in damp conditions in lab for <span class="hl">24 hours</span>.</li>
+    <li><strong>Demould and cure:</strong> Remove cubes from mould and immediately submerge in curing tank (water at 27±2°C).</li>
+    <li><strong>Test at:</strong> 3 days, 7 days, and 28 days. Apply load at <span class="hl">140 kg/cm²/min</span> without shock until failure.</li>
+    <li><strong>Calculate:</strong> Compressive Strength = Failure Load (N) ÷ Cross-sectional Area (150×150 mm²). <span class="hl">Average of 3 specimens</span> = result.</li>
+  </ol>
+  <div class="sub-label">Observation Table</div>
+  <div class="table-wrap" style="margin:0"><table>
+    <thead><tr><th>Cube ID</th><th>Test Day</th><th>Crushing Load (kN)</th><th>Area (mm²)</th><th>Strength (N/mm²)</th></tr></thead>
+    <tbody>
+      <tr><td>C-1</td><td>28 days</td><td>—</td><td>22,500</td><td>Load × 1000 ÷ 22500</td></tr>
+      <tr><td>C-2</td><td>28 days</td><td>—</td><td>22,500</td><td>—</td></tr>
+      <tr><td>C-3</td><td>28 days</td><td>—</td><td>22,500</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+</div></details>
 
 <div class="strength-timeline">
   <div class="st-title">Strength Gain Over Time (% of 28-day strength)</div>
@@ -584,38 +655,51 @@ details[open]>summary{background:var(--surface2);border-bottom:1px solid var(--b
 </div>
 
 <div class="section-label" style="margin-top:1.5rem">🔍 Non-Destructive Testing (NDT)</div>
+<div class="box box-teal" style="margin-bottom:1rem"><strong>Why NDT?</strong> To test hardened concrete structures without causing damage. Allows quick assessment of compressive strength, uniformity, cracks, voids, and quality — in situ.</div>
 <div class="ndt-grid">
   <div class="box box-gold">
     <strong>Rebound Hammer Test</strong> (IS 13311 Part 2 – 1992)<br>
     Tests <strong>surface hardness</strong> of concrete. Schmidt Hammer strikes surface; rebound number correlates to compressive strength.<br><br>
+    <div class="sub-label" style="font-family:var(--font-head);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Procedure notes</div>
+    <p style="font-size:12.5px;color:var(--muted2);margin-bottom:8px">6 readings per observation point · Remove outliers per IS 8000-1978 · Impact point ≥ 20 mm from edges · Hold hammer at 90° to surface (can also be held at angles — but number differs)</p>
     <div class="table-wrap" style="margin:0">
       <table>
         <thead><tr><th>Rebound Number</th><th>Quality</th></tr></thead>
         <tbody>
-          <tr><td>&gt; 40</td><td class="hl-t">Very Good</td></tr>
-          <tr><td>30–40</td><td class="hl">Good</td></tr>
-          <tr><td>20–30</td><td class="hl">Fair</td></tr>
-          <tr><td>&lt; 20</td><td class="hl-r">Poor</td></tr>
+          <tr><td>&gt; 40</td><td class="hl-t">Very Good (Hard Layer)</td></tr>
+          <tr><td>30–40</td><td class="hl">Good Layer</td></tr>
+          <tr><td>20–30</td><td>Fair</td></tr>
+          <tr><td>&lt; 20</td><td class="hl-r">Poor Concrete</td></tr>
+          <tr><td>0</td><td class="hl-r">Delaminated</td></tr>
         </tbody>
       </table>
     </div>
-    <p style="margin-top:8px;font-size:12px;color:var(--muted)">Outliers removed per IS 8000-1978. Average of ≥10 readings.</p>
+    <p style="margin-top:8px;font-size:12px;color:var(--muted)">Accuracy: ±25%. Does NOT detect internal cracks — surface assessment only.</p>
+    <div class="sub-label" style="font-family:var(--font-head);font-size:11px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-top:8px;margin-bottom:4px">Factors Affecting Rebound Index</div>
+    <p style="font-size:12px;color:var(--muted2)">Type of cement & aggregate · Surface moisture content · Age of concrete · Degree of carbonation · Smooth vs rough surface</p>
   </div>
   <div class="box box-blue">
     <strong>Ultrasonic Pulse Velocity (UPV)</strong> (IS 13311 Part 1 – 1992)<br>
     Tests <strong>internal homogeneity, voids, cracks</strong>. Pulse transmitted through concrete; speed indicates quality.<br><br>
+    <div class="formula-block" style="margin:0 0 1rem;border-left-color:var(--blue)">
+      <div class="flabel">UPV Formula</div>
+      <div class="fmain" style="font-size:1.1rem">V = L / T</div>
+      <div class="fnote">V = Pulse velocity (km/s) · L = Path length · T = Transit time (microseconds)</div>
+    </div>
     <div class="table-wrap" style="margin:0">
       <table>
         <thead><tr><th>Pulse Velocity</th><th>Concrete Quality</th></tr></thead>
         <tbody>
           <tr><td>&gt; 4.5 km/s</td><td class="hl-t">Excellent</td></tr>
           <tr><td>3.5–4.5 km/s</td><td class="hl">Good</td></tr>
-          <tr><td>3.0–3.5 km/s</td><td class="hl">Medium</td></tr>
+          <tr><td>3.0–3.5 km/s</td><td>Medium</td></tr>
           <tr><td>&lt; 3.0 km/s</td><td class="hl-r">Doubtful</td></tr>
         </tbody>
       </table>
     </div>
-    <p style="margin-top:8px;font-size:12px;color:var(--muted)">Transmission modes: Direct, Semi-direct, Indirect. Direct is most accurate.</p>
+    <p style="margin-top:8px;font-size:12px;color:var(--muted)">Transmission modes: Direct (best) · Semi-direct · Indirect. Couplant used: petroleum jelly, grease, or kaolin glycerol paste.</p>
+    <div class="sub-label" style="font-family:var(--font-head);font-size:11px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-top:8px;margin-bottom:4px">Principle</div>
+    <p style="font-size:12px;color:var(--muted2)">Crack or void in path → pulse goes around it → longer path → lower velocity. Higher velocity = denser, more homogeneous concrete.</p>
   </div>
 </div>
 
@@ -648,15 +732,104 @@ details[open]>summary{background:var(--surface2);border-bottom:1px solid var(--b
   OR f'_ck = f_ck + X (margin), whichever is HIGHER. The 1.65 factor corresponds to 5% acceptable defectives.</div>
 </div>
 
-<div class="section-label">📋 IS 10262:2009 Mix Design Steps</div>
-<div class="card-grid">
-  <div class="card"><div class="card-head"><div class="dot" style="background:var(--gold)"></div>Step 1 — Design Stipulations</div><p>Grade, workability (slump), exposure condition, max aggregate size, type of cement.</p></div>
-  <div class="card"><div class="card-head"><div class="dot" style="background:var(--teal)"></div>Step 2 — Test Data</div><p>Cement grade, specific gravity of materials, aggregate grading, absorption values.</p></div>
-  <div class="card"><div class="card-head"><div class="dot" style="background:var(--red)"></div>Step 3 — Target Strength</div><p>Apply f'_ck = f_ck + 1.65S formula using IS 10262 Table 1 std deviation values.</p></div>
-  <div class="card"><div class="card-head"><div class="dot" style="background:var(--blue)"></div>Step 4 — W/C Ratio</div><p>Select from IS 456 Table 5 based on exposure condition (mild, moderate, severe, very severe, extreme).</p></div>
-  <div class="card"><div class="card-head"><div class="dot" style="background:var(--purple)"></div>Step 5 — Water Content</div><p>Select from IS 10262 Table 2 based on max aggregate size and required workability/slump.</p></div>
-  <div class="card"><div class="card-head"><div class="dot" style="background:var(--gold)"></div>Step 6 — Cement Content</div><p>Cement = Water content ÷ W/C ratio. Check minimum from IS 456 durability requirements.</p></div>
-  <div class="card"><div class="card-head"><div class="dot" style="background:var(--teal)"></div>Step 7 & 8 — Aggregates</div><p>Proportion FA and CA using absolute volume method. Adjust for site conditions.</p></div>
+<div class="section-label">📋 IS 10262:2009 Mix Design — 8 Steps</div>
+<div class="step-flow">
+  <div class="step-card">
+    <div class="step-num">STEP 01</div>
+    <div class="step-title">Design Stipulations</div>
+    <div class="step-body">
+      <ul>
+        <li>Grade designation (M20, M25, M30…)</li>
+        <li>Type of cement (OPC, PPC)</li>
+        <li>Max nominal aggregate size (<span class="hl">20 mm</span>)</li>
+        <li>Workability / Slump (<span class="hl">50 or 100 mm</span>)</li>
+        <li>Exposure condition (Mild / Moderate / Severe / Very Severe)</li>
+        <li>Method of placing: Manual/Pumping/Bucket</li>
+        <li>Max cement content: <span class="hl">350 kg/m³</span></li>
+        <li>Admixture type (if any)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="step-card">
+    <div class="step-num">STEP 02</div>
+    <div class="step-title">Test Data for Materials</div>
+    <div class="step-body">
+      <ul>
+        <li>Specific gravity of cement</li>
+        <li>Specific gravity of Coarse & Fine Aggregate</li>
+        <li>Water absorption of aggregates</li>
+        <li>Free (surface) moisture of aggregates</li>
+        <li>Sieve analysis of both aggregates</li>
+        <li>Admixture type</li>
+      </ul>
+    </div>
+  </div>
+  <div class="step-card">
+    <div class="step-num">STEP 03</div>
+    <div class="step-title">Target Strength</div>
+    <div class="step-body">
+      <span class="hl">f'ck = fck + 1.65 × S</span><br>
+      <span class="hl">f'ck = fck + X</span><br>
+      Whichever is <strong>higher</strong><br><br>
+      S = Standard deviation from IS 10262 Table 1 &amp; 2. Take the higher target so acceptance rate is maintained.
+    </div>
+  </div>
+  <div class="step-card">
+    <div class="step-num">STEP 04</div>
+    <div class="step-title">Selection of W/C Ratio</div>
+    <div class="step-body">
+      From <span class="hl">IS 456 Table 5</span> — max W/C ratio based on exposure condition.<br><br>
+      <strong>Adopt W/C ratio &lt; Max W/C</strong> (lower is better for durability). Confirm it is acceptable.
+    </div>
+  </div>
+  <div class="step-card">
+    <div class="step-num">STEP 05</div>
+    <div class="step-title">Selection of Water Content</div>
+    <div class="step-body">
+      From <span class="hl">IS 10262 Table 2</span> based on max aggregate size and target slump.<br><br>
+      <strong>Slump adjustment:</strong> For every +25 mm increase in slump → <span class="hl">increase water by +3%</span>.<br><br>
+      <strong>Superplasticizer used?</strong> → reduce water content by 20–30%.
+    </div>
+  </div>
+  <div class="step-card">
+    <div class="step-num">STEP 06</div>
+    <div class="step-title">Cement Content Calculation</div>
+    <div class="step-body">
+      <span class="hl">Cement = Water Content ÷ W/C Ratio</span><br><br>
+      Check that calculated cement ≥ minimum cement from IS 456 (durability requirement). Also ensure ≤ 450 kg/m³ (max limit for most grades).
+    </div>
+  </div>
+  <div class="step-card">
+    <div class="step-num">STEP 07</div>
+    <div class="step-title">Proportion of Aggregates</div>
+    <div class="step-body">
+      From <span class="hl">IS 10262 Table 5</span> → Volume of CA for given size, FA zone, W/C = 0.5.<br><br>
+      <strong>Adjust CA volume:</strong> ±0.01 for every ±0.05 change in W/C ratio (Clause 5.5.1).<br><br>
+      <strong>If pumping:</strong> <span class="hl">CA volume decreased by 10%</span><br>
+      Volume of FA = 1 − Volume of CA
+    </div>
+  </div>
+  <div class="step-card">
+    <div class="step-num">STEP 08</div>
+    <div class="step-title">Mix Calculation (Masses)</div>
+    <div class="step-body">
+      <span class="hl">Mass of CA = e × (Vol. of CA × Sp. Gr. CA) × 1000</span><br>
+      <span class="hl">Mass of FA = e × (Vol. of FA × Sp. Gr. FA) × 1000</span><br><br>
+      Where <em>e</em> = volume of concrete per m³ (1 m³ − volume of air entrapped)
+    </div>
+  </div>
+</div>
+
+<div class="section-label">🔬 Mix Design Methods — Comparison</div>
+<div class="compare-grid">
+  <div class="compare-card"><div class="cc-title" style="color:var(--gold)">IS 10262:2009 (Indian Standard)</div><div class="cc-sub">Most used in India. Based on IS 456 exposure/durability tables. Steps are systematic and exam-focused.</div></div>
+  <div class="compare-card"><div class="cc-title" style="color:var(--teal)">DOE Method (British)</div><div class="cc-sub">Department of Environment method. Uses W/C ratio and target strength chart. Popular in UK/European practice.</div></div>
+  <div class="compare-card"><div class="cc-title" style="color:var(--blue)">ACI 211.1 Method</div><div class="cc-sub">American Concrete Institute method. Uses absolute volume approach. Widely referenced internationally.</div></div>
+  <div class="compare-card"><div class="cc-title" style="color:var(--purple)">Modern / Rapid Methods</div><div class="cc-sub">Computer-aided mix design, rapid testing methods. Used when standard testing data is unavailable.</div></div>
+</div>
+
+<div class="box box-teal">
+  <strong>Pumped Concrete Adjustment (IS 10262 Clause 5.5.1):</strong> When concrete is to be placed by pumping, the volume of coarse aggregate is <strong>decreased by 10%</strong> to improve cohesion and pumpability. This gives more fines, preventing pipe blockage.
 </div>
 
 <div class="section-label" style="margin-top:1rem">🎯 Statistical Quality Control</div>
@@ -733,10 +906,156 @@ details[open]>summary{background:var(--surface2);border-bottom:1px solid var(--b
       <tr><td class="hl">Roller Compacted (RCC)</td><td>Zero slump, roller compacted</td><td>Dams, pavements, ports</td><td>No conventional formwork · Asphalt paver placement</td></tr>
       <tr><td class="hl-b">Ferrocement</td><td>Mortar + wire mesh layers, no coarse agg</td><td>Boats, tanks, thin shells</td><td>No coarse aggregate · Extremely thin sections</td></tr>
       <tr><td class="hl-p">High Performance (HPC)</td><td>Low W/C, silica fume, superplasticizer</td><td>High-rise, offshore, bridges</td><td>W/C &lt; 0.35 · f_ck &gt; 60 N/mm²</td></tr>
-      <tr><td class="hl-t">Pumped Concrete</td><td>Highly flowable, pumpable</td><td>High-rise casting</td><td>Min 30% fine aggregate, no angular coarse</td></tr>
+      <tr><td class="hl-t">Pumped Concrete</td><td>Highly flowable, pumpable</td><td>High-rise casting</td><td>Aggregate size &lt; 20 mm · CA reduced 10%</td></tr>
     </tbody>
   </table>
 </div>
+
+<div class="section-label" style="margin-top:1.5rem">🔎 Special Concretes — Detailed Notes</div>
+
+<details open><summary>Lightweight Concrete (LWC)</summary><div class="acc-body">
+  <strong>Definition:</strong> Density &lt; 1900 kg/m³. Prepared by one of three methods:<br>
+  <ul>
+    <li><strong>Method 1:</strong> Use lightweight aggregates (pumice, scoria, expanded shale)</li>
+    <li><strong>Method 2:</strong> Entrain air/gas bubbles → Aerated/Cellular/Gas concrete/Foam concrete</li>
+    <li><strong>Method 3:</strong> Omit fine aggregate → No-fines concrete</li>
+  </ul>
+  <div class="sub-label">Aggregates Used</div>
+  <div class="agg-grid">
+    <div class="agg-col"><div class="agg-col-head" style="color:var(--teal)">Natural LWC Aggregates</div>
+      <ul><li>Pumice</li><li>Scoria</li><li>Volcanic cinders</li><li>Sawdust</li><li>Rice husk</li><li>Diatomite</li></ul>
+    </div>
+    <div class="agg-col"><div class="agg-col-head" style="color:var(--gold)">Artificial LWC Aggregates</div>
+      <ul><li>Artificial cinders</li><li>Expanded shale</li><li>Sintered fly ash (PFA)</li><li>Foamed slag</li><li>Coke breeze</li><li>Bloated clay</li></ul>
+    </div>
+  </div>
+  <strong>Applications:</strong> Insulation panels, non-load bearing walls, precast roof slabs, bridge decks (to reduce dead load).
+</div></details>
+
+<details style="margin-top:6px"><summary>Polymer Concrete</summary><div class="acc-body">
+  Polymeric resin <strong>partially or completely replaces cement</strong> as the binder. Uses aggregate bonded with epoxy, polyester, or acrylic resins instead of water. Thermoplastic polymers are used.<br><br>
+  <div class="sub-label">4 Types of Polymer Concrete</div>
+  <ul>
+    <li><strong>Polymer Impregnated Concrete (PIC):</strong> Hardened concrete impregnated with monomer → polymerized in situ</li>
+    <li><strong>Polymer Cement Concrete (PCC):</strong> Mix of Portland cement + polymer admixture</li>
+    <li><strong>Polymer Concrete (PC):</strong> Aggregates bonded entirely by polymer resin — no cement at all</li>
+    <li><strong>Partially Impregnated / Surface Coated:</strong> Only surface or partial depth impregnated</li>
+  </ul>
+  <div class="sub-label">Key Properties</div>
+  <ul>
+    <li><span class="hl">Zero permeability</span> (ideal for corrosive/chemical environments)</li>
+    <li>High compressive and tensile strength</li>
+    <li>Excellent chemical and acid resistance</li>
+    <li>Fast setting — useful in cold weather</li>
+    <li>Superior adhesion to old concrete and steel (ideal for repairs)</li>
+  </ul>
+  <strong>Applications:</strong> Chemical plants, sewer systems, marine structures, repair overlays, industrial flooring, precast elements, drainage channels.
+</div></details>
+
+<details style="margin-top:6px"><summary>Fiber Reinforced Concrete (FRC)</summary><div class="acc-body">
+  FRC contains discrete short fibers (steel, glass, polypropylene, carbon, natural) uniformly distributed in the mix. Improves tensile strength, flexural strength, impact resistance, and ductility.<br><br>
+  <div class="sub-label">Key Numbers</div>
+  <ul>
+    <li><span class="hl">Aspect Ratio = Length / Diameter</span> (typically <span class="hl">30–150</span>)</li>
+    <li>Fiber content: <span class="hl">0.5–2% by volume</span></li>
+    <li><span class="hl">Coarse aggregate &gt; 10 mm → strength of FRC decreases</span> (exam trap!)</li>
+    <li>Tensile strength is approximately <strong>doubled</strong> compared to plain concrete</li>
+  </ul>
+  <div class="sub-label">Applications</div>
+  <div class="app-grid" style="margin-top:6px">
+    <div class="app-item"><div class="app-cat">Pavements</div><div class="app-desc"><strong>Highways, runways, industrial floors</strong> — resists heavy traffic fatigue</div></div>
+    <div class="app-item"><div class="app-cat">Bridges</div><div class="app-desc"><strong>Bridge decks</strong> — prevents catastrophic failure under dynamic loads</div></div>
+    <div class="app-item"><div class="app-cat">Water Structures</div><div class="app-desc"><strong>Canal/tunnel lining, gutter covers</strong> — crack-resistant lining</div></div>
+    <div class="app-item"><div class="app-cat">Seismic Zones</div><div class="app-desc"><strong>Buildings in earthquake zones</strong> — improved ductility and post-cracking behavior</div></div>
+  </div>
+  <div class="box box-red" style="margin-top:0.75rem"><strong>Exam Trap:</strong> FRC does NOT eliminate conventional steel bars — it supplements them. The fibers are randomly distributed and prevent micro-crack propagation, not replace structural bars.</div>
+</div></details>
+
+<details style="margin-top:6px"><summary>Pumped Concrete</summary><div class="acc-body">
+  Specially designed flowable concrete transported via a <strong>concrete pump and pipeline</strong> to the placing location. Common in high-rise buildings and congested sites.<br><br>
+  <div class="sub-label">Mix Design Requirements</div>
+  <ul>
+    <li>Aggregate size: <span class="hl">generally ≤ 20 mm</span> to prevent pipe clogging</li>
+    <li>Coarse aggregate volume <span class="hl">reduced by 10%</span> (IS 10262) for pumping</li>
+    <li>Sufficient fine aggregate content (&gt;30%) for smooth flow</li>
+    <li>Plasticizers/superplasticizers to maintain flowability without excess water</li>
+    <li>High slump: <span class="hl">100–175 mm</span></li>
+  </ul>
+  <div class="sub-label">Applications</div>
+  <ul>
+    <li>High-rise building columns, beams, slabs</li>
+    <li>Bridge decks and piers</li>
+    <li>Long tunnels and inaccessible locations</li>
+    <li>Large floor slabs and urban congested construction</li>
+  </ul>
+</div></details>
+
+<details style="margin-top:6px"><summary>Ready Mixed Concrete (RMC)</summary><div class="acc-body">
+  Concrete batched at a <strong>central plant under controlled conditions</strong> and delivered via <strong>transit mixers</strong> (cylindrical truck mixers).<br><br>
+  <div class="box box-red" style="margin-bottom:1rem"><strong>Critical Number: Must be placed within <span class="hl" style="color:var(--red)">210 minutes</span> of batching at plant!</strong> Modern admixtures (retarders) can extend this slightly, but 210 min is the IS code limit.</div>
+  <div class="sub-label">Advantages</div>
+  <ul class="adv-list">
+    <li><strong>Speed:</strong> Programmed delivery — reduces construction time</li>
+    <li><strong>Quality:</strong> Accurate computerized batching → consistency in strength</li>
+    <li><strong>Labour cost:</strong> Reduces on-site supervision and mixing labour</li>
+    <li><strong>Wastage:</strong> Bulk cement handling minimizes cement wastage</li>
+    <li><strong>Clean site:</strong> No on-site stockpiles → less noise, dust, pollution</li>
+    <li><strong>Flexibility:</strong> Admixtures can be tailored for high workability, early strength, retardation</li>
+    <li><strong>Ideal for:</strong> Small quantities, intermittent placing, space-limited sites</li>
+  </ul>
+  <div class="sub-label" style="margin-top:1rem">Limitations</div>
+  <ul class="adv-list limit">
+    <li><strong>Distance risk:</strong> Longer travel time → risk of setting before placement</li>
+    <li><strong>Traffic:</strong> Large transit mixers create road congestion; site access must handle heavy loads (~2.5 t/m³)</li>
+    <li><strong>Remixing:</strong> Concrete remixed at site sets more rapidly than once-mixed concrete</li>
+  </ul>
+  <div class="sub-label" style="margin-top:1rem">Applications</div>
+  <div class="app-grid" style="margin-top:6px">
+    <div class="app-item"><div class="app-cat">Urban Infrastructure</div><div class="app-desc">Roads, bridges, flyovers, metro projects</div></div>
+    <div class="app-item"><div class="app-cat">High-Rise Buildings</div><div class="app-desc">Foundations, columns, beams, slabs</div></div>
+    <div class="app-item"><div class="app-cat">Water Infrastructure</div><div class="app-desc">Dams, canals, treatment plants</div></div>
+    <div class="app-item"><div class="app-cat">Industrial Projects</div><div class="app-desc">Warehouses, factories, silos, tanks</div></div>
+  </div>
+</div></details>
+
+<details style="margin-top:6px"><summary>Roller Compacted Concrete (RCC)</summary><div class="acc-body">
+  <strong>Zero slump</strong> dry, stiff concrete compacted by <strong>vibratory rollers</strong> instead of conventional vibration. Placed using asphalt pavers — no formwork required.<br><br>
+  <ul>
+    <li>Same ingredients as normal concrete, but <span class="hl">very low water content</span></li>
+    <li>No reinforcement in most applications</li>
+    <li>High flexural and compressive strength, low permeability</li>
+    <li>Cost-effective and fast for large areas</li>
+    <li>Excellent resistance to freeze-thaw and abrasion</li>
+  </ul>
+  <div class="sub-label">Applications</div>
+  <div class="app-grid" style="margin-top:6px">
+    <div class="app-item"><div class="app-cat">Dams</div><div class="app-desc"><strong>RCC gravity dams,</strong> spillways, canal linings</div></div>
+    <div class="app-item"><div class="app-cat">Ports & Airfields</div><div class="app-desc">Container yards, <strong>airport runways,</strong> taxiways</div></div>
+    <div class="app-item"><div class="app-cat">Industrial Yards</div><div class="app-desc">Mining haul roads, warehouses, loading docks</div></div>
+    <div class="app-item"><div class="app-cat">Pavements</div><div class="app-desc">Heavy-duty parking areas, industrial roads, highway shoulders</div></div>
+  </div>
+</div></details>
+
+<details style="margin-top:6px"><summary>Ferrocement</summary><div class="acc-body">
+  Thin composite material made by reinforcing <strong>cement mortar</strong> (sand + cement only, <span class="hl">NO coarse aggregate</span>) with <strong>one or more layers of steel wire mesh</strong>.<br><br>
+  <div class="sub-label">Key Properties</div>
+  <ul>
+    <li><span class="hl">NO coarse aggregate</span> (exam critical point)</li>
+    <li>Closely spaced wire mesh → high tensile strength and ductility</li>
+    <li>Lightweight, watertight, can be molded into complex/curved shapes</li>
+    <li>High strength-to-weight ratio</li>
+    <li>Excellent in marine environments and for water retention</li>
+    <li>Fire-resistant, good seismic performance</li>
+    <li>Labor-intensive to construct</li>
+  </ul>
+  <div class="sub-label">Applications</div>
+  <div class="app-grid" style="margin-top:6px">
+    <div class="app-item"><div class="app-cat">Marine</div><div class="app-desc"><strong>Boats, barges,</strong> marine platforms</div></div>
+    <div class="app-item"><div class="app-cat">Water Structures</div><div class="app-desc">Water tanks, reservoirs, septic tanks</div></div>
+    <div class="app-item"><div class="app-cat">Roofing</div><div class="app-desc">Shell roofs, thin domes, <strong>low-cost housing</strong></div></div>
+    <div class="app-item"><div class="app-cat">Retrofitting</div><div class="app-desc">Jacketing columns/beams, strengthening old structures</div></div>
+  </div>
+</div></details>
 
 <div class="mnemonic">
   <div class="mlabel">FRC — Fiber Types</div>
@@ -745,14 +1064,43 @@ details[open]>summary{background:var(--surface2);border-bottom:1px solid var(--b
 </div>
 
 <div class="section-label" style="margin-top:1.5rem">🔒 Durability of Concrete</div>
-<div class="box box-gold" style="margin-bottom:1.25rem"><strong>Definition:</strong> Ability to resist weathering action, chemical attack, abrasion, and other degradation processes while maintaining its desired engineering properties.</div>
-<div class="table-wrap">
+<div class="box box-gold" style="margin-bottom:1.25rem"><strong>Definition (IS 456-2000):</strong> Ability to resist weathering action, chemical attack, abrasion, and other degradation processes while retaining original form, quality and serviceability over its design life.</div>
+
+<div class="section-label" style="margin-top:0.5rem">⚗ Permeability</div>
+<div class="box box-purple" style="margin-bottom:1rem">
+  <strong>Definition:</strong> Degree to which concrete permits gases, liquids or ionic species to move through its pore structure. <strong>Permeability ↑ → Durability ↓</strong>
+</div>
+<div class="two-col">
+  <div class="box box-teal">
+    <strong>Gel Pores:</strong> Very fine pores (nanometer scale) in C-S-H gel. <strong>Do NOT contribute to permeability.</strong> Water in gel pores is adsorbed — not free to flow.
+  </div>
+  <div class="box box-red">
+    <strong>Capillary Pores:</strong> Formed from excess water that was not consumed in hydration. <strong>Main contributor to permeability.</strong> Larger capillary cavities = higher permeability.
+  </div>
+</div>
+<div class="box box-blue" style="margin-top:0.75rem">
+  <strong>W/C Ratio Impact Chain:</strong> Higher W/C → More capillary pores → Higher permeability → Volume changes → Cracks → Disintegration → <strong>Failure</strong>.<br>
+  At low W/C ratio, capillary cavities get filled by hydration products within a few days → concrete becomes denser.
+</div>
+<details style="margin-top:0.75rem"><summary>How to Reduce Permeability</summary><div class="acc-body">
+  <ul>
+    <li>Minimum W/C ratio → dense cement paste</li>
+    <li>Proper compaction → eliminates voids</li>
+    <li>Adequate curing → complete hydration fills capillaries</li>
+    <li>Pozzolanic materials (fly ash, silica fume, GGBS) → finer pore structure</li>
+    <li>Air entrainment up to <span class="hl">6%</span> → makes concrete more impervious</li>
+    <li>High-pressure steam curing with pozzolana → coarser C-S-H gel, reduced drying shrinkage</li>
+  </ul>
+</div></details>
+
+<div class="table-wrap" style="margin-top:1.25rem">
   <table>
     <thead><tr><th>Factor</th><th>Effect on Durability</th></tr></thead>
     <tbody>
       <tr><td class="hl">Low W/C ratio</td><td class="hl-t">↑ Durability — denser matrix, less capillary pores</td></tr>
       <tr><td class="hl">Proper curing</td><td class="hl-t">↑ Durability — complete hydration, strength gain</td></tr>
-      <tr><td class="hl">Adequate cover</td><td class="hl-t">↑ Durability — protects reinforcement from corrosion</td></tr>
+      <tr><td class="hl">Adequate cover to steel</td><td class="hl-t">↑ Durability — protects reinforcement from corrosion</td></tr>
+      <tr><td class="hl">Well-graded strong aggregates</td><td class="hl-t">↑ Durability — better compaction, fewer voids</td></tr>
       <tr><td class="hl">High permeability</td><td class="hl-r">↓ Durability — allows ingress of water, gases, ions</td></tr>
     </tbody>
   </table>
@@ -857,6 +1205,16 @@ details[open]>summary{background:var(--surface2);border-bottom:1px solid var(--b
     <p>40 tons / 10 min · Sieve: <strong style="color:var(--gold)">2.36 mm</strong> · Wearing: <strong style="color:var(--gold)">30%</strong> · Non-wear: <strong style="color:var(--gold)">45%</strong></p></div>
   <div class="card"><div class="card-head"><div class="dot" style="background:var(--teal)"></div>RMC Time Limit</div>
     <p>Must be placed within <strong style="color:var(--teal)">210 minutes</strong> of mixing</p></div>
+  <div class="card"><div class="card-head"><div class="dot" style="background:var(--red)"></div>Rebound Hammer Quality</div>
+    <p>&gt;40 = Very Good · 30–40 = Good · 20–30 = Fair · <strong style="color:var(--red)">&lt;20 = Poor · 0 = Delaminated</strong></p></div>
+  <div class="card"><div class="card-head"><div class="dot" style="background:var(--purple)"></div>FRC Numbers</div>
+    <p>Fiber volume: <strong style="color:var(--purple)">0.5–2%</strong> · Aspect ratio: <strong style="color:var(--purple)">30–150</strong> · Coarse agg &gt;<strong style="color:var(--purple)">10mm</strong> = strength ↓</p></div>
+  <div class="card"><div class="card-head"><div class="dot" style="background:var(--gold)"></div>Polymer Concrete</div>
+    <p>4 Types: <strong style="color:var(--gold)">PIC · PCC · PC · Surface Coated</strong> · Zero permeability</p></div>
+  <div class="card"><div class="card-head"><div class="dot" style="background:var(--blue)"></div>IS 10262 — Pumping</div>
+    <p>CA volume <strong style="color:var(--blue)">decreased by 10%</strong> · Slump: <strong style="color:var(--blue)">+3% water per +25mm slump</strong></p></div>
+  <div class="card"><div class="card-head"><div class="dot" style="background:var(--teal)"></div>Permeability</div>
+    <p>Gel pores: <strong style="color:var(--teal)">no contribution</strong> · Capillary pores: <strong style="color:var(--teal)">main contributor</strong> · Air entrainment &lt;<strong style="color:var(--teal)">6%</strong> → impervious</p></div>
 </div>
 
 </div><!-- .page -->
@@ -891,12 +1249,12 @@ window.addEventListener('scroll', () => {
 
 // ─── UNIT TOPICS FOR PROMPT ───
 const unitTopics = {
-  '1': 'Unit 1: Cement manufacturing (1300-1500°C, 3-5% gypsum), Bogue compounds (C3S/Alite early strength, C2S/Belite late strength, C3A/Celite first to hydrate + flash setting + highest heat, C4AF/Felite insignificant), OPC grades (33/43/53), Tests: Fineness (90 micron sieve, max 10%), Consistency (Vicat, 5-7mm from bottom), Setting time (Initial 30-45min, Final 6-10hrs), Soundness (Le-Chatelier), Compressive strength (7.06cm cubes, 1:3 ratio), Types of cement (RHC vs Quick Setting - different!), Water quality (pH 6-8, Cl<500, SO4<400, TDS<2000 mg/L), Aggregate tests: Crushing (40t/10min, 2.36mm sieve, 30%/45%), Impact (14kg, 38cm, 15 blows, 30%/45%), Abrasion LA (500-1000 rotations, 30-33 RPM, 16%), Flakiness (max 25% roads), Elongation (10-15% undesirable)',
-  '2': 'Unit 2 Fresh Concrete: Weigh batching preferred over volume batching. Segregation (coarse agg separation, honeycombing), Bleeding (water rises, weakens top). Slump cone (H=30cm, bottom=20cm, top=10cm, 3 layers x 25 tamps with 16mm rod, True/Shear/Collapse). Vee-Bee (low workability mixes, 5-10s=high, >20s=low). Compaction Factor (CF=partial/full weight, >0.95=high workability). Temperature effects: high temp = faster early but lower ultimate strength. Maturity Rule M=Σ(T-T0)Δt. Curing methods: ponding, wet burlap, polythene, steam curing.',
-  '3': 'Unit 3 Hardened Concrete: 150mm cube test, loading rate 140 kg/cm²/min (IS 516). Strength gain: 1day=16%, 7days=65%, 28days=99%. Flexural strength fcr=0.7√fck, Modulus of elasticity Ec=5000√fck (IS 456). Creep (time-dependent under sustained load) coefficients: 7days=2.2, 28days=1.6, 1year=1.1. Shrinkage types: plastic, drying, autogenous, carbonation, thermal. NDT: Rebound hammer (surface hardness, >40=very good, <20=poor, IS 13311 Pt2), UPV (homogeneity, >4.5km/s=excellent, <3.0km/s=doubtful, IS 13311 Pt1).',
-  '4': 'Unit 4 Mix Design: Concrete grades - Ordinary M10-M20, Standard M25-M55, High strength M60-M80. M=Mix, number=28day strength N/mm². Target strength f\'ck = fck + 1.65S (IS 10262). IS 10262 steps: stipulations, test data, target strength, W/C ratio (IS 456 Table 5), water content, cement content, aggregate proportioning. Statistical quality control - mean of 4 consecutive tests, acceptance criteria. DOE method vs IS method.',
-  '5': 'Unit 5 Admixtures: Plasticizers (lignosulfonates, 10-15% water reduction), Superplasticizers (SMF/acrylic polymer, 20-30% water reduction, max 2% by cement mass), Accelerators (CaCl2 up to 2% - harms prestressed steel, sodium carbonate - cold weather), Retarders (gypsum, sugar max 0.2% - hot weather and RMC), Air entrainers (Vinsol resin - freeze-thaw resistance, decreases strength). Mineral admixtures: Silica fume (90-95% SiO2, 5-15% replacement), GGBS (30-70% replacement, lowers heat), Fly ash (pozzolanic, 20-35%), RHA (90% silica), Metakaolin. IS 9103. Marsh cone test for superplasticizer.',
-  '6': 'Unit 6 Special concretes: Lightweight (pumice, sawdust, density<1900), Heavyweight (magnetite, barite, radiation shielding), Polymer concrete (resins, zero permeability), FRC (0.5-2% volume fibers, aspect ratio 30-150, steel/glass/PP), RMC (batch plant, transit mixer, 210 minute limit, needs retarder), RCC (zero slump, roller compacted, dams/pavements), Ferrocement (wire mesh + mortar, NO coarse aggregate), HPC (W/C<0.35). Durability: Sulphate attack (ettringite formation, use SRC), Chloride attack (destroys passive layer, corrosion, spalling), Carbonation (CO2 reduces pH below 9, phenolphthalein test), ASR (alkali + reactive silica = gel + swelling + map cracking), Acid attack, Seawater attack (Cl + MgSO4).'
+  '1': 'Unit 1: Cement manufacturing (1300-1500°C, 3-5% gypsum), Bogue compounds (C3S/Alite early strength, C2S/Belite late strength, C3A/Celite first to hydrate + flash setting + highest heat, C4AF/Felite insignificant), OPC grades (33/43/53), Tests: Fineness (90 micron sieve, max 10%), Consistency (Vicat, 5-7mm from bottom), Setting time (Initial 30-45min, Final 6-10hrs), Soundness (Le-Chatelier expansion max 10mm), Compressive strength (7.06cm cubes, 1:3 ratio), Types of cement (RHC vs Quick Setting - different! RHC has more C3S, Quick Setting sets in 5 min for underwater), Water quality (pH 6-8, Cl<500, SO4<400, TDS<2000 mg/L), Aggregate tests: Crushing (40t/10min, 2.36mm sieve, 30%/45%), Impact (14kg, 38cm, 15 blows, 30%/45%), Abrasion LA (500-1000 rotations, 30-33 RPM, 16%), Flakiness (max 25% roads), Elongation (10-15% undesirable)',
+  '2': 'Unit 2 Fresh Concrete: Weigh batching preferred over volume batching. Segregation (coarse agg separation, honeycombing), Bleeding (water rises, weakens top, laitance). Slump cone (H=30cm, bottom=20cm, top=10cm, 3 layers x 25 tamps with 16mm rod, True/Shear/Collapse slump types). Vee-Bee (low workability mixes, 5-10s=high, >20s=low). Compaction Factor (CF=partial/full weight, >0.95=high workability). Temperature effects: high temp = faster early but lower ultimate strength. Maturity Rule M=Σ(T-T0)Δt. Curing methods: ponding, wet burlap, polythene, steam curing.',
+  '3': 'Unit 3 Hardened Concrete: IS 516-1959 compressive test - 150mm cube, loading rate 140 kg/cm²/min, 3 layers x 25 tamps, test at 3/7/28 days, report average of 3. Strength gain: 1day=16%, 7days=65%, 28days=99%. Flexural strength fcr=0.7√fck, Modulus of elasticity Ec=5000√fck (IS 456). Creep (time-dependent under sustained load) coefficients: 7days=2.2, 28days=1.6, 1year=1.1. Shrinkage types: plastic, drying (loss of gel water), autogenous (self-desiccation), carbonation, thermal. NDT: Rebound hammer (IS 13311 Pt2, surface hardness, 6 readings per point, >40=very good hard, 30-40=good, 20-30=fair, <20=poor, 0=delaminated, accuracy ±25%), UPV (IS 13311 Pt1, homogeneity, V=L/T, >4.5km/s=excellent, 3.5-4.5=good, 3.0-3.5=medium, <3.0=doubtful, couplant: petroleum jelly).',
+  '4': 'Unit 4 Mix Design: Concrete grades - Ordinary M10-M20, Standard M25-M55, High strength M60-M80. M=Mix, number=28day strength N/mm². Target strength f\'ck = fck + 1.65S (IS 10262, whichever is higher with f\'ck=fck+X). IS 10262 steps: 1)Design stipulations (grade, slump 50/100mm, exposure, max agg 20mm, max cement 350kg/m3) 2)Test data (Sp Gr, absorption, sieve analysis) 3)Target strength 4)W/C ratio from IS 456 Table 5 5)Water content from IS 10262 Table 2 (+3% per 25mm slump increase) 6)Cement content=water/W/C 7)Aggregate proportioning (CA volume adjusted ±0.01 per ±0.05 W/C, pumping→CA reduced 10%) 8)Mass calc: mass=e×(volume×Sp.Gr)×1000. Statistical quality control: mean of 4 consecutive tests ≥ fck+0.825S. Methods: IS 10262, DOE (British), ACI 211.1.',
+  '5': 'Unit 5 Admixtures: Plasticizers (lignosulfonates, 10-15% water reduction), Superplasticizers (SMF/acrylic polymer, 20-30% water reduction, max 2% by cement mass), Accelerators (CaCl2 up to 2% - harms prestressed steel, sodium carbonate - cold weather), Retarders (gypsum, sugar max 0.2% - hot weather and RMC), Air entrainers (Vinsol resin - freeze-thaw resistance, air up to 6% → more impervious, decreases strength). IS 9103 governs admixtures. Marsh cone test for superplasticizer optimum dosage. Mineral admixtures: Silica fume (90-95% SiO2, 5-15% replacement), GGBS (30-70% replacement, lowers heat), Fly ash (pozzolanic, 20-35%), RHA (90% silica), Metakaolin (10-20%).',
+  '6': 'Unit 6 Special concretes: LWC (density<1900 kg/m3, 3 methods: LW aggregates/aerated/no-fines, natural: pumice/scoria/diatomite, artificial: expanded shale/foamed slag/bloated clay), Polymer (PIC/PCC/PC/surface coated, zero permeability, epoxy/polyester resin), FRC (0.5-2% volume fibers, aspect ratio 30-150, coarse agg >10mm reduces strength, tensile strength doubled, uses: highways/runways/tunnels), Pumped (agg<20mm, CA reduced 10%, slump 100-175mm), RMC (batch plant+transit mixer, 210 minute limit, retarder essential, transit mixer=cylindrical truck, advantages: speed/quality/less labour, limitations: 210min/traffic/remixing sets faster), RCC (zero slump, vibratory rollers+asphalt paver, no formwork, dams/runways/industrial roads), Ferrocement (wire mesh+mortar, NO coarse agg, high strength-to-weight, boats/tanks/thin shells). Permeability: gel pores dont contribute, capillary pores main contributor, air entrainment 6% makes impervious. Durability: Sulphate attack (ettringite, use SRC), Chloride (destroys passive layer, spalling), Carbonation (CO2+Ca(OH)2→CaCO3, pH drops <9, phenolphthalein test), ASR (alkali+reactive silica=gel+map cracking), Acid attack, Seawater (Cl+MgSO4+CO2, tidal zone most aggressive).'
 };
 
 // ─── LOAD QUESTION ───
